@@ -1,0 +1,1 @@
+Atividade básica full-stack. É só fazer uma lista de tarefas com a opção de remover e marcar como concluída. Usa NODEjs e salva tudo em um arquivo JSON. É absurdamente simples.
