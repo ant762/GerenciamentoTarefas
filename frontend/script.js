@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
-    carregarTarefas();
+document.addEventListener('DOMContentLoaded', () => { // isso basicamente serve para carregar todas as tarefas na mesma hora
+    carregarTarefas();                                // que os documentos html e scripts carregam
 
     document.getElementById('tarefa-form').addEventListener('submit', (escolhido) => {
         escolhido.preventDefault();
