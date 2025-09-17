@@ -6,7 +6,7 @@ const cors = require('cors')
 
 app.use(cors())
 
-app.use(express.json()); // Faz a analise e parse dos dados de entrada contidos no corpo da requisição, disponibilizando as propriedades do req (pelo menos, de acordo com o google)
+app.use(express.json()); // como opção secundária, dava pra usar o parseint, que faz a analise e parse dos dados de entrada contidos no corpo da requisição, disponibilizando as propriedades do req (pelo menos, de acordo com o google)
 
 let tarefas = [
     { id: 1, titulo: "Planejar o sprint", descricao: "Definir as próximas atividades do time de desenvolvimento", concluida: false },
@@ -14,6 +14,10 @@ let tarefas = [
     { id: 3, titulo: "Escrever testes unitários", descricao: "Criar testes para a API de login", concluida: false }
 ];
 
+
+app.get('/tarefas', (req, res) => {
+    res.status(200).json(tarefas)
+})
 app.post('/tarefas', (req, res) => {
     const { titulo, descricao } = req.body;
     const id = tarefas.length ? tarefas[tarefas.length - 1].id + 1 : 1;
